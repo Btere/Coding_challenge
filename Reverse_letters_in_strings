@@ -1,0 +1,19 @@
+class Solution:
+   def reverseOnlyLetters(self, s: str) -> str:
+        reversed_box: List = []
+# Initialize a counter to keep track of the start and stop of the current segment.
+        start, end = 0, 0
+
+        while end < len(s):
+            if s[end].isalpha():
+                while end < len(s) and s[end].isalpha():
+                    end += 1
+                #reveresed the alphabetic segment and add it to the reversed_box segment
+                    reversed_box.append(s[start:end][::-1])
+                    start = end # we update the start for the next segment
+            else:
+                while end < len(s) and not s[end].isalpha():
+                    reversed_box.append(s[start:end])
+                    start = end
+
+        return ''.join(reversed_segments)
