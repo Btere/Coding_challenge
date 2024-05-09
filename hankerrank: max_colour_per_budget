@@ -1,0 +1,21 @@
+def max_colors_within_budget(colors, budget):
+    start = 0
+    end = 0
+    current_sum = 0
+    max_colors = 0
+
+    while end < len(colors):
+        current_sum += colors[end]
+        while current_sum > budget:
+            current_sum -= colors[start]
+            start += 1
+        max_colors = max(max_colors, end - start + 1)
+        end += 1
+
+    return max_colors
+
+# Example usage:
+colors_prices = [10, 20, 30, 15, 25, 35]
+budget = 50
+max_colors = max_colors_within_budget(colors_prices, budget)
+print("Maximum number of colors within budget:", max_colors)
