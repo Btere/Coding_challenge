@@ -1,1 +1,1 @@
-This repo comprises of all the coding challeges we worked individually, or with colleagues to track and improve our problem solving skill in python, Data Structure and Algorithm. IF you have an optimize ways to solve the question, you could contribute to this repo.
+This repo comprises of all the coding challeges i worked individually, or with colleagues to track and improve my problem solving skill in python, Data Structure and Algorithm. If you have an optimize ways to solve the question, you could contribute to this repo.
