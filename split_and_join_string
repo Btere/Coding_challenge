@@ -1,0 +1,10 @@
+from typing imort str
+def split_and_join(line:str) -> str:
+"""This function takes a string as input, split the string by a space delimiter, then join the number of split by an hypen.
+arg: str
+Return: joined string with an hypen
+"""
+    length_of_string = len(line)
+    result1 = line.split(" ", length_of_string)
+    join_result = "-".join(result1)
+    return join_result
