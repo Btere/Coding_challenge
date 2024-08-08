@@ -1,0 +1,14 @@
+"""This solution here is to reverse a number passed as a parameter into a function"""
+
+def reverse_number(num):
+    # Convert the number to a string
+    str_num = str(num)
+    # Reverse the string representation of the number
+    reversed_str_num = str_num[::-1]
+    # Convert the reversed string back to an integer
+    reversed_num = int(reversed_str_num)
+    return reversed_num
+
+
+print(reverse_number(1223)) # Output: 3221
+print(reverse_number(987654321)) # Output: 123456789
