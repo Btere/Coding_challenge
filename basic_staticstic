@@ -1,0 +1,46 @@
+Find basic statistics(mean, median and mode) of an array X  and N be the length of the array. Result should be in 1 decimal place, and if value_count of mode = 1, it should print the lowest number for the mode.
+
+from typing import List
+import statistics
+
+def calculate_stat(numbers: List[int]):
+    # Sort the list for median and mode calculations
+    numbers.sort()
+    
+    # Calculate Mean
+    total_sum = sum(numbers)
+    average_mean = round(total_sum / len(numbers), 1)
+    
+    # Calculate Median
+    middle_number = round(statistics.median(numbers), 1)
+    
+    # Count the frequency of each number
+    frequency = {}
+    for num in numbers:
+        if num in frequency:
+            frequency[num] += 1
+        else:
+            frequency[num] = 1
+    
+    # Find the maximum frequency
+    max_freq = max(frequency.values())
+    
+    # Find all numbers with the maximum frequency
+    modes = [num for num, freq in frequency.items() if freq == max_freq]
+    
+    # Get the smallest mode
+    mode_value = min(modes)
+    
+    # Return mean, median, and mode
+    return average_mean, middle_number, mode_value
+
+# Input
+n = int(input().strip())
+numbers = list(map(int, input().strip().split()))
+
+mean, median, mode = calculate_stat(numbers)
+
+# Print results
+print(f"{mean:.1f}")
+print(f"{median:.1f}")
+print(mode)
